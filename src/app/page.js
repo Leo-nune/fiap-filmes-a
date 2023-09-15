@@ -1,38 +1,63 @@
 import CardFilme from "@/components/CardFilme";
-import Titulo from "@/components/Titulo";
+
 
 export default function Home() {
   //mock
   const filmes = [
     {
-      id: 1,
-      titulo: "Star Wars",
-      nota: 9.5,
-      poster: "https://www.themoviedb.org/t/p/w94_and_h141_bestv2/nNTvClgnd3FfQ45IVQkk4HLHuBN.jpg"
+      titulo: "1ªGeração",
+      id:1,
+      poster: "https://images.saymedia-content.com/.image/t_share/MTczOTQwMjUyMTkxMjM3OTg1/best-looking-shiny-pokemon-generation-1.jpg"
     },
     {
-      id: 2,
-      titulo: "Barbie",
-      nota: 9.0,
-      poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg"
+      titulo: "2ªGeração",
+      id:2,
+      poster: "https://i.ytimg.com/vi/w4FE2FkrtZs/maxresdefault.jpg"
+    },
+    {
+      titulo: "3ªGeração",
+      id:3,
+      poster: "https://sm.ign.com/ign_pt/screenshot/default/broll_cbj7.jpg"
+    },
+    {
+      titulo: "4ªGeração",
+      id:4,
+      poster: "https://sm.ign.com/t/ign_pt/screenshot/default/gen4-1531453048844-1280w_a7eh.1200.jpg"
+    },
+    {
+      titulo: "5ªGeração",
+      id:5,
+      poster: "https://bestreamer.com/wp-content/uploads/2019/12/06-Snivy-Tepig-Oshawott.jpg"
+    },
+    {
+      titulo: "6ªGeração",
+      id:6,
+      poster: "https://sm.ign.com/ign_pt/screenshot/default/pokemon-starters_t9be.jpg"
     }
   ] 
 
 
   return (
     <>
-      <nav className="bg-slate-900 p-4">
-        <h1 className="text-3xl font-bold">Fiap Filmes</h1>
-      </nav>
 
-      <Titulo>em alta</Titulo>
-
-      <section className="flex flex-wrap gap-2">
+      <div className="flex gap-3">
+        <h1 className="text-amber-400 text-4xl font-bold size-30px">Pokemon</h1>
+          <ul>
+            <li className="flex gap-5">
+              <a className="text-cyan-100" href="#">ShinyDex</a>
+              <a className="text-cyan-100" href="#">Favoritos</a>
+              <a className="text-cyan-100" href="">Sobre</a>
+            </li>
+          </ul>
+      </div>
+      <div className="absolute">
+        <img src="https://lh3.googleusercontent.com/05JfZ1ZdyzrRNvhJosUFdcjjJRFE7k2KhmeM2ujqeCbrcrCb1hkq7O_JdUBpQ3r9hi0YeSn4WgmKx3Ai8LHdM2SucxSzl9TRZ4fCAqETJ6WtHgE=w1440-e365" className="w-screen h-screen"/>
+    </div>
+      <section className="flex flex-wrap gap-2 absolute w-full h-screen bg-black bg-opacity-50 blur-1 absolute">
         {filmes.map( filme => <CardFilme filme={filme} /> )}
       </section>
-
-      <Titulo>lançamentos</Titulo>
-
     </>
   )
 }
+
+
