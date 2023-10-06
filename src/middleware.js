@@ -7,6 +7,6 @@ export function middleware(request) {
 }
 
 export const config = {
-    matcher: [ '/:path', '/favoritos:path'] 
+    matcher: [ '/:path', '/favoritos:path','/gen1:path'] 
     
 }

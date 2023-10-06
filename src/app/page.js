@@ -1,5 +1,9 @@
+'use client'
+import { serverLogout } from "@/actions/auth";
 import CardFilme from "@/components/CardFilme";
 import CardPokemon from "@/components/CardPokemon";
+import { LogOut } from "lucide";
+import { useRouter } from "next/navigation";
 
 async function carregarPokemon() {
   const url = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
@@ -10,6 +14,10 @@ async function carregarPokemon() {
 
 
 export default async function Home() {
+
+  const{push}=useRouter()
+  carregarPokemon()
+
 
   const pokemons = await carregarPokemon()
   //mock
@@ -46,6 +54,10 @@ export default async function Home() {
     }
   ]
 
+  function LogOut (){
+    serverLogout()
+    push('/login')
+  }
 
   return (
     <>
@@ -54,7 +66,7 @@ export default async function Home() {
         <h1 className="text-amber-400 text-4xl font-bold size-30px">Pokemon</h1>
         <ul>
           <li className="flex gap-5">
-            <a className="text-cyan-100" href="#">ShinyDex</a>
+            <button onClick={LogOut} clasName='text-cyan-100'>LogOut</button>
             <a className="text-cyan-100" href="#">Favoritos</a>
             <a className="text-cyan-100" href="">Sobre</a>
           </li>
@@ -66,9 +78,6 @@ export default async function Home() {
       <div className="flex flex-col">
         <section className="flex flex-wrap gap-2 w-full h-screen bg-black bg-opacity-50 blur-1 relative">
           {filmes.map(filme => <CardFilme filme={filme} />)}
-        </section>
-        <section className="flex flex-wrap gap-2 w-full h-screen bg-black bg-opacity-50 blur-1 relative">
-          {pokemons.map(pokemon => <CardPokemon pokemon={pokemon} />)}
         </section>
       </div>
 

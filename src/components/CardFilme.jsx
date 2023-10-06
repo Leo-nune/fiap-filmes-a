@@ -51,7 +51,7 @@ export default function CardFilme({filme}){
             <img className="rounded w-30" src={filme.poster} alt="poster do filme" />
             <div className="flex items-center gap-2">
             </div>
-            <a href="#" className="text-amber-400 bg-blue-800 w-full rounded text-center py-1 hover:text-amber-900">
+            <a href="../gen1" className="text-amber-400 bg-blue-800 w-full rounded text-center py-1 hover:text-amber-900">
                 explorar
             </a>
         </div>
