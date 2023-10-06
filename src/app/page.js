@@ -1,7 +1,6 @@
 'use client'
 import { serverLogout } from "@/actions/auth";
 import CardFilme from "@/components/CardFilme";
-import CardPokemon from "@/components/CardPokemon";
 import { LogOut } from "lucide";
 import { useRouter } from "next/navigation";
 
